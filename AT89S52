@@ -1,0 +1,205 @@
+#include<reg52.h>
+
+sbit GLED1_pin		= P1^0; //set the LED pin as P1.0
+sbit GLED2_pin 		= P1^1; //set the LED pin as P1.1
+sbit GLED3_pin 		= P1^2; //set the LED pin as P1.2
+sbit GLED4_pin 		= P1^3; //set the LED pin as P1.3
+sbit GLED5_pin 		= P1^4; //set the LED pin as P1.4
+sbit GLED6_pin		= P1^5; //set the LED pin as P1.5
+sbit GLED7_pin 		= P1^6; //set the LED pin as P1.6
+sbit GLED8_pin 		= P1^7; //set the LED pin as P1.7
+
+sbit RLEDiron_pin = P3^0; //set the LED pin as P3.0
+sbit RLED1_pin    = P3^1; //set the LED pin as P3.1
+sbit RLED2_pin    = P3^2; //set the LED pin as P3.2
+sbit RLED3_pin 		= P3^3; //set the LED pin as P3.3
+sbit RLED4_pin		= P3^4; //set the LED pin as P3.4
+sbit RLED5_pin 		= P3^5; //set the LED pin as P3.5
+sbit RLED6_pin 		= P3^6; //set the LED pin as P3.6
+sbit RLED7_pin 		= P3^7; //set the LED pin as P3.7
+sbit RLED8_pin 		= P2^0; //set the LED pin as P2.0
+sbit RLED9_pin  	= P2^1; //set the LED pin as P2.1
+sbit RLED10_pin 	= P2^2; //set the LED pin as P2.2
+
+sbit Phase   			= P0^6;    //Phase 		connected to P0.5
+sbit Neutral  		= P0^5;    //Neutral 	connected to P0.6
+sbit Earth    		= P0^7;    //Earth 		connected to P0.7
+sbit Hand     		= P0^4;    //Hand 		connected to P0.4
+sbit Shoe     		= P0^3;    //Shoe 		connected to P0.3
+
+
+#define  ON    0
+#define  OFF   1
+#define  LON   0
+#define  LOFF  1
+
+
+void delay(int ms)
+	{
+   unsigned int i, j;
+   for(i = 0; i< ms; i++)
+		{
+      // Outer for loop for given milliseconds value
+      for(j = 0; j < 1275; j++)
+			{
+      //execute in each milliseconds;
+      }
+   }
+}
+
+
+void main(){
+		while(1)
+	{
+		RLEDiron_pin 	= LOFF;
+			RLED1_pin 		= LOFF;
+			RLED2_pin 		= LOFF;
+			RLED3_pin 		= LOFF;
+			RLED4_pin 		= LOFF;
+			RLED5_pin 		= LOFF;
+			RLED6_pin 		= LOFF;
+			RLED7_pin			= LOFF;
+			RLED8_pin 		= LOFF;
+			RLED9_pin 		= LOFF;
+			RLED10_pin 		= LOFF;
+			GLED1_pin = LOFF;
+			GLED2_pin = LOFF;
+			GLED3_pin = LOFF;
+			GLED4_pin = LOFF;
+			GLED5_pin = LOFF;
+			GLED6_pin = LOFF;
+			GLED7_pin = LOFF;
+			GLED8_pin = LOFF;
+		if(Phase == ON && Neutral== ON && Earth == OFF && Shoe == OFF && Hand == OFF)
+		{
+			RLEDiron_pin 	= LON;
+			RLED1_pin 		= LOFF;
+			RLED2_pin 		= LOFF;
+			RLED3_pin 		= LOFF;
+			RLED4_pin 		= LOFF;
+			RLED5_pin 		= LOFF;
+			RLED6_pin 		= LOFF;
+			RLED7_pin			= LOFF;
+			RLED8_pin 		= LOFF;
+			RLED9_pin 		= LOFF;
+			RLED10_pin 		= LOFF;
+			GLED1_pin = LOFF;
+			GLED2_pin = LOFF;
+			GLED3_pin = LOFF;
+			GLED4_pin = LOFF;
+			GLED5_pin = LOFF;
+			GLED6_pin = LOFF;
+			GLED7_pin = LOFF;
+			GLED8_pin = LOFF;
+		}	
+   else if(Phase == ON && Neutral== ON &&  Earth == OFF && Shoe == OFF && Hand == ON)   
+    {
+			RLEDiron_pin 	= LON;
+      RLED1_pin = LON;
+      delay(25); //wait for 500 milliseconds
+      RLED2_pin = LON;
+      delay(25); //wait for 500 milliseconds
+      RLED3_pin = LON;
+      delay(25); //wait for 500 milliseconds 
+      RLED4_pin = LON;
+      delay(25); //wait for 500 milliseconds
+      RLED5_pin = LON;
+      delay(25); //wait for 500 milliseconds
+      RLED6_pin = LON;
+      delay(25); //wait for 500 milliseconds
+      RLED7_pin = LON;
+      delay(25); //wait for 500 milliseconds
+      RLED8_pin = LON;
+      delay(25); //wait for 500 milliseconds
+      RLED9_pin = LON;
+      delay(25); //wait for 500 milliseconds
+      RLED10_pin = LON;
+      delay(25); //wait for 500 milliseconds
+			GLED1_pin = LOFF;
+			GLED2_pin = LOFF;
+			GLED3_pin = LOFF;
+			GLED4_pin = LOFF;
+			GLED5_pin = LOFF;
+			GLED6_pin = LOFF;
+			GLED7_pin = LOFF;
+			GLED8_pin = LOFF;
+      delay(50); //wait for 500 milliseconds
+   }
+		 else if(Phase == ON && Neutral== ON &&  Earth == OFF && Shoe == ON && Hand == ON)  
+		 {
+			RLEDiron_pin 	= LON;
+			RLED1_pin 		= LOFF;
+			RLED2_pin 		= LOFF;
+			RLED3_pin 		= LOFF;
+			RLED4_pin 		= LOFF;
+			RLED5_pin 		= LOFF;
+			RLED6_pin 		= LOFF;
+			RLED7_pin			= LOFF;
+			RLED8_pin 		= LOFF;
+			RLED9_pin 		= LOFF;
+			RLED10_pin 		= LOFF;
+			GLED1_pin = LOFF;
+			GLED2_pin = LOFF;
+			GLED3_pin = LOFF;
+			GLED4_pin = LOFF;
+			GLED5_pin = LOFF;
+			GLED6_pin = LOFF;
+			GLED7_pin = LOFF;
+			GLED8_pin = LOFF;			 
+		 }
+	  else if(Phase == ON && Neutral== ON &&  Earth == ON)   
+    {
+			RLEDiron_pin 	= LON;
+      GLED1_pin = LON;
+      delay(25); //wait for 500 milliseconds
+      GLED2_pin = LON;
+      delay(25); //wait for 500 milliseconds
+      GLED3_pin = LON;
+      delay(25); //wait for 500 milliseconds
+      GLED4_pin = LON;
+      delay(25); //wait for 500 milliseconds
+      GLED5_pin = LON;
+      delay(25); //wait for 500 milliseconds
+      GLED6_pin = LON;
+      delay(25); //wait for 500 milliseconds
+      GLED7_pin = LON;
+      delay(25); //wait for 500 milliseconds
+      GLED8_pin = LON;
+      delay(25); //wait for 500 milliseconds
+			RLED1_pin 		= LOFF;
+			RLED2_pin 		= LOFF;
+			RLED3_pin 		= LOFF;
+			RLED4_pin 		= LOFF;
+			RLED5_pin 		= LOFF;
+			RLED6_pin 		= LOFF;
+			RLED7_pin			= LOFF;
+			RLED8_pin 		= LOFF;
+			RLED9_pin 		= LOFF;
+			RLED10_pin 		= LOFF;
+      delay(50); //wait for 500 milliseconds
+   }
+	else
+	{
+			RLEDiron_pin 	= LOFF;
+			RLED1_pin = LOFF;
+			RLED2_pin = LOFF;
+			RLED3_pin = LOFF;
+			RLED4_pin = LOFF;
+			RLED5_pin = LOFF;
+
+		RLED6_pin = LOFF;
+			RLED7_pin = LOFF;
+			RLED8_pin = LOFF;
+			RLED9_pin = LOFF;
+			RLED10_pin = LOFF;
+			GLED1_pin = LOFF;
+			GLED2_pin = LOFF;
+			GLED3_pin = LOFF;
+			GLED4_pin = LOFF;
+			GLED5_pin = LOFF;
+			GLED6_pin = LOFF;
+			GLED7_pin = LOFF;
+			GLED8_pin = LOFF;
+	}
+}
+}

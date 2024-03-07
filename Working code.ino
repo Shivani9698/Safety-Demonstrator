@@ -7,9 +7,9 @@
 #define iron_pin 16
 
 
-#define RLED1_pin 21
-#define RLED2_pin 33
-#define RLED3_pin 22
+#define RLED1_pin 22
+#define RLED2_pin 13
+#define RLED3_pin 21
 #define RLED4_pin 23
 #define RLED5_pin 18
 
